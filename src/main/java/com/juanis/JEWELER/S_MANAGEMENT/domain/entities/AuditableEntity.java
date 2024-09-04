@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class AuditableEntity {
-    @
     private Timestamp createdAt;
     private Timestamp updatedAt;
 }
