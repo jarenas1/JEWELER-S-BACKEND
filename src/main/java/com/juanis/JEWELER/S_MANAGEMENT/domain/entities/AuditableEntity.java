@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -11,6 +12,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class AuditableEntity {
+    @
     private Timestamp createdAt;
     private Timestamp updatedAt;
 }
