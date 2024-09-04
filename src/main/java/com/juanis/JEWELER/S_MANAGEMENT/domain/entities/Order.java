@@ -4,7 +4,7 @@ import com.juanis.JEWELER.S_MANAGEMENT.utils.enums.StatusOrder;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity(name = "orders")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,7 +21,8 @@ public class Order extends AuditableEntity {
     @Column(nullable = false)
     private StatusOrder status;
 
-    @Column(nullable = false)
-    private Long user;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private UserEntity user;
 
 }

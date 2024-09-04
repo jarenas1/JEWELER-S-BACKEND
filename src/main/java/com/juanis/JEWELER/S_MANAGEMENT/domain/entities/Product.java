@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.util.List;
 
-@Entity(name = "users")
+@Entity(name = "prods")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -34,9 +34,10 @@ public class Product {
     @Column(nullable = false)
     private boolean status;
 
-    @Column(nullable = false)
-    private List<String> media;
+    @OneToMany
+    private List<Media> media;
 
-    @Column(nullable = false)
-    private Long category;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Category category;
 }

@@ -1,8 +1,10 @@
 package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 
+import jakarta.persistence.MappedSuperclass;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -11,9 +13,11 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
-public abstract class AuditableEntity {
+
+public class AuditableEntity {
     @CreationTimestamp
     private Timestamp createdAt;
+
+    @UpdateTimestamp
     private Timestamp updatedAt;
 }

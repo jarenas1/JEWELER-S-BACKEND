@@ -4,7 +4,7 @@ import com.juanis.JEWELER.S_MANAGEMENT.utils.enums.MediaType;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity(name = "medias")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,4 +20,8 @@ public class Media {
 
     @Column(nullable = false)
     private MediaType type;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Product product;
 }

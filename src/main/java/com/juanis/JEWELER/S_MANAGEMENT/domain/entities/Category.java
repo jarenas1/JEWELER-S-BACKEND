@@ -3,7 +3,7 @@ package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity (name = "categories")
 @Getter
 @Setter
 @NoArgsConstructor

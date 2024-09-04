@@ -3,7 +3,7 @@ package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Entity(name = "aitems")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -14,11 +14,13 @@ public class Item extends AuditableEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long product;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Product product;
 
-    @Column(nullable = false)
-    private Long order;
+    @ManyToOne
+    @JoinColumn (nullable = false)
+    private Order order;
 
     @Column(nullable = false)
     private Integer quantity;

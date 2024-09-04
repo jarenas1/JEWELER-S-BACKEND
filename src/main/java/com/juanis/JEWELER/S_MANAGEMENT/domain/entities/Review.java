@@ -1,15 +1,12 @@
 package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
-@Entity
+@Entity(name = "reviews")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,9 +22,12 @@ public class Review extends AuditableEntity {
 
     private String description;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private UserEntity user;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private  Product product;
 
-    private Timestamp cratedAt;
 }
