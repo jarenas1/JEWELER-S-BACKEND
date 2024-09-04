@@ -1,6 +1,7 @@
 package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 
-import jakarta.persistence.Entity;
+import com.juanis.JEWELER.S_MANAGEMENT.utils.enums.MediaType;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -10,4 +11,13 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Media {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String url;
+
+    @Column(nullable = false)
+    private MediaType type;
 }
