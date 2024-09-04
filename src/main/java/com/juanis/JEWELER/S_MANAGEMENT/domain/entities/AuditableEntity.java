@@ -1,4 +1,16 @@
 package com.juanis.JEWELER.S_MANAGEMENT.domain.entities;
 
-public class AuditableEntity {
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+import java.sql.Timestamp;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+public abstract class AuditableEntity {
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
 }
